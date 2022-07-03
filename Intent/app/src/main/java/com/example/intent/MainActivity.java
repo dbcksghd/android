@@ -36,3 +36,4 @@ public class MainActivity extends AppCompatActivity {
 
 //메인액티비티에서 글을 적음->이동버튼 누름->intent에 의해서 액티비티로 이동, putextra에 의해서 적은 내용을 인텐트에 넣어서 이동->
 //서브액티비티에 도착->보낸 글을 겟 인텐트에서 받음->string 형으로 변환->setText로 보임
+
