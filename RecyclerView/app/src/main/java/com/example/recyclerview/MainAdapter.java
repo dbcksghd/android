@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,19 +30,47 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.CustomViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MainAdapter.CustomViewHolder holder, int position) {
+        holder.imageView.setImageResource(arrayList.get(position).getImageview());
+        holder.tv_name.setText(arrayList.get(position).getTv_name());
+        holder.tv_content.setText(arrayList.get(position).getTv_content());
 
+        holder.itemView.setTag(position);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String curName = holder.tv_name.getText().toString();
+                Toast.makeText(view.getContext(), curName, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                remove(holder.getAdapterPosition());
+                return true;
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (null != arrayList ? arrayList.size() : 0);
+    }
+
+    public void remove(int position) {
+        try{
+            arrayList.remove(position);
+            notifyItemRemoved(position);
+        } catch(IndexOutOfBoundsException ex) {
+            ex.printStackTrace();
+        }
     }
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
 
         protected ImageView imageView;
         protected TextView tv_name;
-        private TextView tv_content
+        private TextView tv_content;
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.imageView = (ImageView) itemView.findViewById(R.id.imageview);
