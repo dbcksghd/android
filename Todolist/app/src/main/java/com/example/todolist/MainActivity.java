@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 String text = editText.getText().toString();
                 editText.setText(null);
 
-                adapter.addItem(new Todo(text));
+                adapter.addItem(new MainData(text));
                 adapter.notifyDataSetChanged();
             }
         });

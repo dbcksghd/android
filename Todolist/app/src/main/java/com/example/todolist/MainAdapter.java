@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
-    ArrayList<Todo> items = new ArrayList<>();
+    ArrayList<MainData> items = new ArrayList<>();
 
     @NonNull
     @Override
@@ -23,10 +23,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Todo item = items.get(position);
+        MainData item = items.get(position);
         holder.setItem(item);
     }
-    public void addItem(Todo item){
+    public void addItem(MainData item){
         items.add(item);
     }
 
@@ -43,7 +43,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             textView= itemView.findViewById(R.id.textView);
         }
 
-        public void setItem(Todo item){
+        public void setItem(MainData item){
             textView.setText(item.getText());
         }
     }

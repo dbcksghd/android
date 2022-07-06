@@ -1,9 +1,9 @@
 package com.example.todolist;
 
-public class Todo {
+public class MainData {
     String Text;
 
-    public Todo(String text) {
+    public MainData(String text) {
         Text = text;
     }
 
