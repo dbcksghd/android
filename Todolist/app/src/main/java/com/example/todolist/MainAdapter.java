@@ -21,11 +21,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         return new ViewHolder(itemView);
     }
 
+
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         MainData item = items.get(position);
         holder.setItem(item);
     }
+
     public void addItem(MainData item){
         items.add(item);
     }
@@ -33,6 +36,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         return items.size();
+    }
+
+    public void remove(int position){
+        try{
+            items.remove(position);
+            notifyItemRemoved(position);
+        }catch (IndexOutOfBoundsException ex){
+            ex.printStackTrace();
+        }
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
