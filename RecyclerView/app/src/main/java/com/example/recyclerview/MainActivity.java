@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private MainAdapter mainAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +34,15 @@ public class MainActivity extends AppCompatActivity {
         mainAdapter = new MainAdapter(arrayList);
         recyclerView.setAdapter(mainAdapter);
 
+        EditText editText = (EditText)findViewById(R.id.editText);
         Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainData mainData = new MainData(R.mipmap.ic_launcher, "유찬홍", "리싸이클러뷰");
+                MainData mainData = new MainData(R.mipmap.ic_launcher, editText.getText().toString());
                 arrayList.add(mainData);
                 mainAdapter.notifyDataSetChanged();
+                editText.setText(null);
             }
         });
     }
