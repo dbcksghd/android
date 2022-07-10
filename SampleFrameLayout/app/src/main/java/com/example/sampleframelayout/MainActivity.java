@@ -1,14 +1,17 @@
 package com.example.sampleframelayout;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     ImageView imageView2;
+    Button button;
     
     int imageIndex = 0;
     
@@ -19,9 +22,15 @@ public class MainActivity extends AppCompatActivity {
         
         imageView = findViewById(R.id.imageView);
         imageView2 = findViewById(R.id.imageView2);
+        button = findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                changeImage();
+            }
+        });
     }
-    
-    public void onButton1Clicked(View v){
+    public void onButtonClicked(View v){
         changeImage();
     }
 
