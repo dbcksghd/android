@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void onButtonClicked(View v){
+    public void onButton1Clicked(View v){
         changeImage();
     }
 
