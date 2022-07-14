@@ -10,10 +10,9 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 
 public class MainActivity extends AppCompatActivity {
-    ScrollView scrollView, scrollView2;
+    ScrollView scrollView;
     ImageView imageView, imageView2;
     BitmapDrawable bitmap;
-    int count = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
