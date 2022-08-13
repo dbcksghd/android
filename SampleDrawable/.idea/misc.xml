@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/Desktop/github/Android/SampleDrawable/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2835" />
+        <entry key="..\:/Users/user/Desktop/github/Android/SampleDrawable/app/src/main/res/drawable/back_drawable.xml" value="0.1" />
+        <entry key="..\:/Users/user/Desktop/github/Android/SampleDrawable/app/src/main/res/drawable/border_drawable.xml" value="0.211" />
         <entry key="..\:/Users/user/Desktop/github/Android/SampleDrawable/app/src/main/res/drawable/finger_drawable.xml" value="0.1955" />
         <entry key="..\:/Users/user/Desktop/github/Android/SampleDrawable/app/src/main/res/drawable/mcthemax.xml" value="0.2835" />
         <entry key="..\:/Users/user/Desktop/github/Android/SampleDrawable/app/src/main/res/drawable/rect_drawable.xml" value="0.2835" />
