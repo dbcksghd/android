@@ -7,6 +7,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:text="유찬홍 개 잘생김"/>
+        android:text="화면 2"/>
 
 </FrameLayout>

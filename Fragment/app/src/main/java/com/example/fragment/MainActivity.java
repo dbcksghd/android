@@ -1,70 +1,66 @@
 package com.example.fragment;
 
-import androidx.annotation.FractionRes;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.icu.number.FractionPrecision;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn_1, btn_2, btn_3, btn_4;
+    Button btn1, btn2, btn3, btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btn_1 = (Button)findViewById(R.id.btn_1);
-        btn_2 = (Button)findViewById(R.id.btn_2);
-        btn_3 = (Button)findViewById(R.id.btn_3);
-        btn_4 = (Button)findViewById(R.id.btn_4);
-
-        btn_1.setOnClickListener(new View.OnClickListener() {
+        btn1 = findViewById(R.id.btn_1);
+        btn2 = findViewById(R.id.btn_2);
+        btn3 = findViewById(R.id.btn_3);
+        btn4 = findViewById(R.id.btn_4);
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                Fragment fragment1 = new Fragment1();
+                Fragment1 fragment1 = new Fragment1();
                 transaction.replace(R.id.frame, fragment1);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                transaction.addToBackStack(null);//뒤쪽 스택으로 이동. 없으면 바로 나가짐
+                transaction.commit(); //저장
             }
         });
 
-        btn_2.setOnClickListener(new View.OnClickListener() {
+        btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                Fragment fragment2 = new Fragment2();
+                Fragment2 fragment2 = new Fragment2();
                 transaction.replace(R.id.frame, fragment2);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                transaction.addToBackStack(null);//뒤쪽 스택으로 이동
+                transaction.commit(); //저장
             }
         });
 
-        btn_3.setOnClickListener(new View.OnClickListener() {
+        btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                Fragment fragment3 = new Fragment3();
+                Fragment3 fragment3 = new Fragment3();
                 transaction.replace(R.id.frame, fragment3);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                transaction.addToBackStack(null);//뒤쪽 스택으로 이동
+                transaction.commit(); //저장
             }
         });
 
-        btn_4.setOnClickListener(new View.OnClickListener() {
+        btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                Fragment fragment4 = new Fragment4();
+                Fragment4 fragment4 = new Fragment4();
                 transaction.replace(R.id.frame, fragment4);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                transaction.addToBackStack(null);//뒤쪽 스택으로 이동
+                transaction.commit(); //저장
             }
         });
     }
